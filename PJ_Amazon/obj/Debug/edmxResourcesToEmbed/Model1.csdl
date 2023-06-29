@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="APD65_63011212019Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="Bill_Id" />
+    </Key>
+    <Property Name="Bill_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Oder_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TotalAmount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bill_Item" Relationship="Self.FK_Bill_Item_Bill" FromRole="Bill" ToRole="Bill_Item" />
+  </EntityType>
+  <EntityType Name="Bill_Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Menu_Id" Type="Int32" Nullable="false" />
+    <Property Name="Bill_Id" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK_Bill_Item_Bill" FromRole="Bill_Item" ToRole="Bill" />
+    <NavigationProperty Name="Menu" Relationship="Self.FK_Bill_Item_Menu" FromRole="Bill_Item" ToRole="Menu" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Menu_Id" />
+    </Key>
+    <Property Name="Menu_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Menu_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Type_Menu" Type="Int32" />
+    <NavigationProperty Name="Bill_Item" Relationship="Self.FK_Bill_Item_Menu" FromRole="Menu" ToRole="Bill_Item" />
+  </EntityType>
+  <Association Name="FK_Bill_Item_Bill">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bill_Item" Type="Self.Bill_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="Bill_Id" />
+      </Principal>
+      <Dependent Role="Bill_Item">
+        <PropertyRef Name="Bill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Item_Menu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bill_Item" Type="Self.Bill_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Menu_Id" />
+      </Principal>
+      <Dependent Role="Bill_Item">
+        <PropertyRef Name="Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="APD65_63011212019Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bills" EntityType="Self.Bill" />
+    <EntitySet Name="Bill_Item" EntityType="Self.Bill_Item" />
+    <EntitySet Name="Menus" EntityType="Self.Menu" />
+    <AssociationSet Name="FK_Bill_Item_Bill" Association="Self.FK_Bill_Item_Bill">
+      <End Role="Bill" EntitySet="Bills" />
+      <End Role="Bill_Item" EntitySet="Bill_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Item_Menu" Association="Self.FK_Bill_Item_Menu">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="Bill_Item" EntitySet="Bill_Item" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

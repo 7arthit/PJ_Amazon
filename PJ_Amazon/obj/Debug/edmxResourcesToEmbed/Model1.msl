@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="APD65_63011212019ModelStoreContainer" CdmEntityContainer="APD65_63011212019Entities1">
+    <EntitySetMapping Name="Bills">
+      <EntityTypeMapping TypeName="APD65_63011212019Model.Bill">
+        <MappingFragment StoreEntitySet="Bill">
+          <ScalarProperty Name="Bill_Id" ColumnName="Bill_Id" />
+          <ScalarProperty Name="Oder_Date" ColumnName="Oder_Date" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bill_Item">
+      <EntityTypeMapping TypeName="APD65_63011212019Model.Bill_Item">
+        <MappingFragment StoreEntitySet="Bill_Item">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+          <ScalarProperty Name="Bill_Id" ColumnName="Bill_Id" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="APD65_63011212019Model.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="Menu_Id" ColumnName="Menu_Id" />
+          <ScalarProperty Name="Menu_Name" ColumnName="Menu_Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Type_Menu" ColumnName="Type_Menu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

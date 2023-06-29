@@ -1,0 +1,16 @@
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\bin\Debug\PJ_Amazon.exe.config
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\bin\Debug\PJ_Amazon.exe
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\bin\Debug\PJ_Amazon.pdb
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\bin\Debug\EntityFramework.dll
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\bin\Debug\EntityFramework.xml
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\obj\Debug\PJ_Amazon.csproj.AssemblyReference.cache
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\obj\Debug\PJ_Amazon.csproj.SuggestedBindingRedirects.cache
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\obj\Debug\PJ_Amazon.Form1.resources
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\obj\Debug\PJ_Amazon.Properties.Resources.resources
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\obj\Debug\PJ_Amazon.csproj.GenerateResource.cache
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\obj\Debug\PJ_Amazon.csproj.CoreCompileInputs.cache
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\obj\Debug\PJ_Amazon.csproj.CopyComplete
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\obj\Debug\PJ_Amazon.exe
+C:\Users\Arthit Thaweebot\source\repos\PJ_Amazon\PJ_Amazon\obj\Debug\PJ_Amazon.pdb

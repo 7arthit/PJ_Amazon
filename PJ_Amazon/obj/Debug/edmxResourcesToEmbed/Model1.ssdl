@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="APD65_63011212019Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="Bill_Id" />
+    </Key>
+    <Property Name="Bill_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Oder_Date" Type="datetime" Nullable="false" />
+    <Property Name="TotalAmount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bill_Item">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Menu_Id" Type="int" Nullable="false" />
+    <Property Name="Bill_Id" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Menu_Id" />
+    </Key>
+    <Property Name="Menu_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Menu_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Price" Type="int" />
+    <Property Name="Type_Menu" Type="int" />
+  </EntityType>
+  <Association Name="FK_Bill_Item_Bill">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bill_Item" Type="Self.Bill_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="Bill_Id" />
+      </Principal>
+      <Dependent Role="Bill_Item">
+        <PropertyRef Name="Bill_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bill_Item_Menu">
+    <End Role="Menu" Type="Self.Menu" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Bill_Item" Type="Self.Bill_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Menu_Id" />
+      </Principal>
+      <Dependent Role="Bill_Item">
+        <PropertyRef Name="Menu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="APD65_63011212019ModelStoreContainer">
+    <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bill_Item" EntityType="Self.Bill_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Bill_Item_Bill" Association="Self.FK_Bill_Item_Bill">
+      <End Role="Bill" EntitySet="Bill" />
+      <End Role="Bill_Item" EntitySet="Bill_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bill_Item_Menu" Association="Self.FK_Bill_Item_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="Bill_Item" EntitySet="Bill_Item" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
